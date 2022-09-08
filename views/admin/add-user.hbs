@@ -1,0 +1,31 @@
+<div class="row padding">
+    <div class="col-md-6 m-auto">
+        <div class="container mt-5 pl-5">
+            <h2 class="text-center">Add New user</h2>
+            <form action="/admin/add-user" method="POST">
+                <div class="form-group">
+                    <label for="">Name</label>
+                    <input type="name" class="form-control" name="Name" placeholder="Enter Your Full Name">
+                </div>
+                <div class="form-group">
+                    <label for="">Email address</label>
+                    <input type="email" class="form-control" name="Email" placeholder="Enter email">
+                </div>
+                <div class="form-group">
+                    <label for="">LCO code</label>
+                    <input type="text" class="form-control" name="LCO" placeholder="Enter your LOC code">
+                </div>
+                <div class="form-group">
+                    <label for="">Phone</label>
+                    <input type="number" class="form-control" name="Phone" placeholder="Enter Phone number">
+                </div>
+                <div class="form-group">
+                    <label for="">Password</label>
+                    <input type="password" class="form-control" name="Password" placeholder="Password">
+                </div>
+
+                <button type="submit" class="btn btn-success float-right">Add user</button>
+            </form>
+        </div>
+    </div>
+</div>

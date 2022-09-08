@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <h2>JavaScript While Loop</h2>
+
+    <p id="demo"></p>
+
+    <script>
+        let rent_given = 1000;
+        let rent = 230;
+        let n = Math.floor(rent_given / rent)
+        let rent_to_add = n * rent;
+        let rent_balance = rent_given - rent_to_add;
+
+        var arr = [];
+        var rent_array = []
+        for (var i = 0; i < n; i++) {
+            rent_array[i] = rent_to_add / n;
+
+        }
+        console.log(rent_array);
+        // for (let i = 0; i < n; i++) {
+
+        //     let m[i] =
+
+
+        //         arr.push({
+        //             i: 1 * rent
+        //         });
+        //     console.log(arr);
+        //     console.log(arr.length);
+
+        //     SUM
+        //     var totalSalary = 0;
+        //     for (var j = 0; j < arr.length; j++) {
+        //         totalSalary += arr[j]
+        //     }
+        //     console.log(totalSalary);
+
+        // }
+
+        document.getElementById("demo").innerHTML = rent_array;
+    </script>
+
+</body>
+
+</html>

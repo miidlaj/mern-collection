@@ -1,0 +1,146 @@
+<div class="row padding">
+    <div class="col-md-6 m-auto">
+        <div class="container mt-5 pl-5">
+            <h2 class="text-center">Add new customer</h2>
+            <form action="/add-cutomer" method="POST">
+                <div class="form-group">
+                    <label for="validationDefault01">Full Name</label>
+                    <input id="name" type="name" class="form-control" name="Name" placeholder="Enter Full Name">
+                </div>
+
+                <div class="form-group">
+                    <fieldset id="buildyourform">
+                        <label for="validationDefault02">STB number</label>
+                    </fieldset>
+                    <input id="" type="number" class="form-control col-md-6" name="stb_number"
+                        placeholder="Enter STB number">
+                    <div class="pt-3 form-group">
+                        <input id="validationDefault02" type="button" value="Add a Number" class="add " id=""
+                            onclick="myFunction()" />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="validationDefault03">Phone</label>
+                    <input id="phone" onchange="getUsername()" type="number" class="form-control col-md-6" name="Phone"
+                        placeholder="Enter Phone number">
+                </div>
+                <div class="form-row">
+                    <div class="form-group  col-md-6 ">
+                        <label for="">Username</label>
+                        <input id="username" type="text" class="form-control col-md-6" name="username" value="">
+                    </div>
+                    <div class="form-group  col-md-6 ">
+                        <label for="">Id</label>
+                        <input id="id" type="text" class="form-control col-md-6" name="id" value="">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group  col-md-6">
+                        <label for="validationDefault04">Monthly rent</label>
+                        <input id="validationDefault04" onchange="getId()" type="number" class="form-control"
+                            name="Rent" placeholder="Enter rent">
+                    </div>
+                    <div class="form-group  col-md-6">
+                        <label for="">Enter Location <span>(Optional!)</span></label>
+                        <input type="number" class="form-control" name="location" placeholder="Enter rent">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="validationDefault01">Address</label>
+                    <input id="" type="text" class="form-control" name="Address" placeholder="Enter Address">
+                </div>
+                <div class="form-group">
+                    <label for="exampleFormControlTextarea1 validationDefault05">Description</label>
+                    <textarea id="validationDefault05" name="Description" class="form-control"
+                        id="exampleFormControlTextarea1" rows="3"></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary float-right">Add customer</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script>
+    $("#username").prop("readonly", true);
+    $("#id").prop("readonly", true);
+</script>
+<script>
+    function getUsername() {
+        const x = document.getElementById("name").value;
+        const z = x.toLowerCase();
+        const y = document.getElementById("phone").value;
+
+        const name = z.split(' ');
+        const phone = y.slice(y.length - 4)
+        let username = name[1] + phone;
+
+
+
+        document.getElementById("username").value = username;
+        console.log(username)
+
+
+    }
+    function myFunction() {
+        var x = document.createElement("INPUT");
+        x.setAttribute("type", "number");
+        x.setAttribute("placeholder", "Enter Your second STB number");
+        x.setAttribute("class", "form-control col-md-6");
+
+        document.body.appendChild(x);
+    }
+
+</script>
+<script>
+
+    function getId() {
+
+        const username = document.getElementById("username").value;
+
+        function randomString(length, chars) {
+            var result = '';
+            for (var i = length; i > 0; --i) result += chars[Math.floor(Math.random() * chars.length)];
+            return result;
+        }
+        function addStr(str, index, stringToAdd) {
+            return str.substring(0, index) + stringToAdd + str.substring(index, str.length);
+
+        }
+        var n = username.length;
+        console.log(n)
+        var num1 = Math.floor(Math.random() * n) + 1;
+        var num2 = Math.floor(Math.random() * n) + 1;
+        var num3 = Math.floor(Math.random() * n) + 1;
+        var add1 = randomString(3, '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ');
+        var add2 = randomString(3, '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ');
+        var add3 = randomString(3, '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ');
+        var first = addStr(username, num1, add1)
+        var first2 = addStr(first, num2, add2)
+        var first3 = addStr(first2, num3, add3)
+        console.log(first3)
+
+        document.getElementById("id").value = first3;
+    }
+</script>
+<script>
+    $(document).ready(function () {
+        $("#add").click(function () {
+
+            var lastField = $("#buildyourform div:last");
+            var intId = (lastField && lastField.length && lastField.data("idx") + 1) || 1;
+            var fieldWrapper = $("<div class=\"fieldwrapper\" id=\"field" + intId + "\"/>");
+            fieldWrapper.data("idx", intId);
+            var fName = $("<input type=\"text\" name=\"stb-number2\" placeholder=\"Enter 2 STB number\" class=\"form-control col-md-6 \" />");
+            var removeButton = $("<input type=\"button\" class=\"remove\" value=\"-\" />");
+            removeButton.click(function () {
+                $(this).parent().remove();
+            });
+            fieldWrapper.append(fName);
+
+            fieldWrapper.append(removeButton);
+            $("#buildyourform").append(fieldWrapper);
+        });
+    });
+</script>

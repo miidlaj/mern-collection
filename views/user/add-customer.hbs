@@ -1,0 +1,103 @@
+<div class="container">
+
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label>
+                First Name *</label>
+            <input name="txtFName" type="text" id="txtFName" class="form-control" />
+        </div>
+        <div class="form-group col-md-6">
+            <label>
+                Last Name</label>
+            <input name="txtLName" type="text" id="txtLName" class="form-control" />
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label>
+                D.O.B *</label>
+            <input name="txtDob" type="text" id="txtDob" class="form-control" />
+        </div>
+        <div class="form-group col-md-6">
+            <label>
+                Sex *</label>
+            <select name="drpSex" id="drpSex" class="form-control">
+                <option value="Select">Select</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+
+            </select>
+        </div>
+    </div>
+
+
+
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label>
+                Email *</label><span id="lblMailErr" style="color:Red;"></span>
+            <input name="txtMail" type="email" id="txtMail" class="form-control" />
+        </div>
+        <div class="form-group col-md-6">
+            <label>
+                Contact *</label><span id="lblMobErr" style="color:Red;"></span>
+            <input name="txtContact" type="number"
+                onchange="javascript:setTimeout(&#39;__doPostBack(\&#39;txtContact\&#39;,\&#39;\&#39;)&#39;, 0)"
+                onkeypress="if (WebForm_TextBoxKeyHandler(event) == false) return false;" id="txtContact"
+                class="form-control" />
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label>Select Class*</label>
+            <select name="drpclass" id="drpclass" class="form-control">
+                <option value="Select">Select</option>
+                <option value="+ 1 SCIENCE">+ 1 SCIENCE</option>
+                <option value="+1 SCIENCE (B1)">+1 SCIENCE (B1)</option>
+                <option value="+1 SCIENCE (B2)">+1 SCIENCE (B2)</option>
+                <option value="+2">+2</option>
+                <option value="+2-S3">+2-S3</option>
+                <option value="MARKAZ ZETA +1">MARKAZ ZETA +1</option>
+                <option value="MARKAZ ZETA +2">MARKAZ ZETA +2</option>
+                <option value="REPEATERS NEET-2021">REPEATERS NEET-2021</option>
+                <option value="Revision">Revision</option>
+
+            </select>
+        </div>
+        <div class="form-group col-md-6">
+            <label>
+                Address *</label>
+            <textarea name="txtAdd" rows="2" cols="20" id="txtAdd" class="form-control">
+</textarea>
+        </div>
+
+    </div>
+
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label>
+                Country/City</label>
+            <input name="txtCountry" type="text" id="txtCountry" class="form-control" placeholder="Country" />
+            <input name="txtCity" type="text" id="txtCity" class="form-control" placeholder="City" />
+        </div>
+        <div class="form-group col-md-6">
+            <label>
+                Street</label>
+            <input name="txtStreet" type="text" id="txtStreet" class="form-control" />
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label> Zip</label>
+            <input name="txtZip" type="number" id="txtZip" class="form-control" />
+        </div>
+
+    </div>
+
+
+
+
+    <input type="submit" name="btnSignup" value="Sign Up" id="btnSignup" class="btn btn-primary" />
+</div>

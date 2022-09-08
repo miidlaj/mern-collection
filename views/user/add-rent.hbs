@@ -1,0 +1,24 @@
+<div class="row ">
+    <div class="col-md-6 m-auto">
+        <div class="container mt-5 pl-5">
+            <h2 class="text-center">Add Rent Amount</h2>
+            {{#each Onecustomer}}
+            <form class="pt-5 " style="padding-left: 100px;" action="/all-customers/add-rent/{{this.id}}" method="POST">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="">Amount</label>
+                        <input id="rent" type="number" class="form-control col-md-6" name="rent" value="">
+                    </div>
+                    <div class="form-group   ">
+                        <label for="Date">Date (mm-dd-yyyy)</label>
+                        <input type="date" class="form-control col-md-6" name="rentDate" placeholder="Select Date">
+                    </div>
+                </div>
+                <div class="text-center pt-5" style="padding-left: 130px;">
+                    <button type=" submit" class="btn btn-primary text-center">Add Rent</button>
+                </div>
+            </form>
+            {{/each}}
+        </div>
+    </div>
+</div>

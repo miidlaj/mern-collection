@@ -1,0 +1,12 @@
+let customerDetails = await db.get().collection(collection.CUSTOMER_COLLECTION).find({
+                    customers: {
+                        $elemMatch: {
+                            Username: username
+                        }
+                    }
+                },
+                    { 'customers.$': 1 }
+                ).toArray()
+                resolve(customerDetails)
+
+                console.log(customerDetails+"123");
