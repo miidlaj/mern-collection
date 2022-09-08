@@ -1,1 +1,1 @@
-# python-AI
+# web app for collection
